@@ -12,10 +12,10 @@ const WeatherCondition = () => {
     const {maxTemperature, minTemperature, humidity, cloudpercentage, wind, climate} = weatherData;
   return (
    <>
-   <div className=" w-1/2 flex flex-col gap-3">
-    <div><h3>Today's Climate Is {climate}</h3></div>
+   <div className="w-1/2 flex flex-col gap-3">
+    <div className="mt-5"><h3>Today's Climate Is {climate}</h3></div>
     <div>
-        <ul>
+        <ul className="space-y-8">
             <li className=" w-full flex justify-between ">
                 <span>Temp max</span>
                 <div className="flex items-center gap-2">
@@ -47,7 +47,7 @@ const WeatherCondition = () => {
             <li className=" w-full flex justify-between ">
                 <span>Wind</span>
                 <div className="flex items-center gap-2">
-                 <span>{Math.round(wind)}</span>
+                 <span>{wind} km/h</span>
                  <img className="w-3 h-3" src={windIcon} alt="temperature icon" />
                 </div>
             </li>

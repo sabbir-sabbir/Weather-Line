@@ -41,12 +41,12 @@ const WeatherHeadline = () => {
   return (
     <>
       <div className=" w-1/2  flex flex-col justify-start gap-2">
-      <div className="flex items-center gap-3"><img className="w-7 h-7" src={getWeatherIcon(climate)} alt="Weather icon" />
+      <div className="flex items-center gap-3"><img className="w-36 h-36" src={getWeatherIcon(climate)} alt="Weather icon" />
       <span>{climate}</span>
       </div>
         
-        <h3>{Math.round(temperature)}°</h3>
-        <p className="flex items-center gap-3">
+        <h3 className="text-5xl">{Math.round(temperature)}°</h3>
+        <p className=" mt-5 flex items-center gap-3">
           {" "}
           <span>
             <img className="w-8 h-8" src={pin} alt="location" />

@@ -10,11 +10,11 @@ const FavoriteListModal = () => {
              <span><img className="w-8 h-8" src={listRedHeart} alt="listRedHeart" /></span>
             </div>
             
-            <ul className="absolute cursor-pointer bg-red-400 top-[28px]">
-                <li>Dhaka</li>
-                <li>Rangpur</li>
-                <li>Europe</li>
-            </ul>
+            <ul className="absolute w-[180px] pl-6 py-2 h-[250px] cursor-pointer bg-red-400 top-[32px] right-[20px] flex flex-col items-start space-y-3">
+  <li className="">Dhaka</li>
+  <li className="">Rangpur</li>
+  <li className="">Europe</li>
+</ul>
         </div>
     </>
   )

@@ -11,16 +11,19 @@ const WeatherBoard = () => {
 
   return (
     <>
-      <section className="  w-full h-auto  px-28 py-12">
+      <section className="w-full h-auto  px-32 py-10">
         {loading.state ? (
           <p>{loading.message}</p>
         ) : (
           <>
+          <section className="border-2 border-sky-500">
             <Addtofavorite />
             <div className="flex justify-between items-center ">
               <WeatherHeadline />
               <WeatherCondition />
             </div>
+          </section>
+            
           </>
         )}
       </section>
