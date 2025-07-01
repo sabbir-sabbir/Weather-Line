@@ -1,25 +1,31 @@
-import React from 'react'
-import Addtofavorite from './Addtofavorite'
-import WeatherHeadline from './WeatherHeadline'
-import WeatherCondition from './WeatherCondition'
+import React, { useContext } from "react";
+import Addtofavorite from "./Addtofavorite";
+import WeatherHeadline from "./WeatherHeadline";
+import WeatherCondition from "./WeatherCondition";
 
-import { useWeather } from '../../hooks'
+import { WeatherContext } from "../../context";
 
 const WeatherBoard = () => {
-  const {loading, error, weatherData} = useWeather();
-  console.log(loading, error, weatherData);
-  
+  // Extract data from context
+  const {  loading } = useContext(WeatherContext);
+
   return (
     <>
-    <section className=" bg-red-400 w-full h-auto  px-28 py-12">
-    <Addtofavorite/>
-    <div className="flex justify-between items-center ">
-      <WeatherHeadline/>
-      <WeatherCondition/>
-    </div>
-    </section>
+      <section className="  w-full h-auto  px-28 py-12">
+        {loading.state ? (
+          <p>{loading.message}</p>
+        ) : (
+          <>
+            <Addtofavorite />
+            <div className="flex justify-between items-center ">
+              <WeatherHeadline />
+              <WeatherCondition />
+            </div>
+          </>
+        )}
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default WeatherBoard
+export default WeatherBoard;

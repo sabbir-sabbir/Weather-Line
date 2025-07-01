@@ -8,7 +8,7 @@ const App = () => {
     <>
    <WeatherProviderComponent>
      <Header/>
-    <WeatherBoard/>
+     <WeatherBoard/>
    </WeatherProviderComponent>
     </>
   )
