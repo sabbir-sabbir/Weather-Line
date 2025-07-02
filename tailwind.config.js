@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+       fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        tektur: ['Tektur', 'sans-serif'],
+        Vujahday: ['Vujahday Script', 'sans-serif']
+      },
+    },
   },
   plugins: [],
 }
