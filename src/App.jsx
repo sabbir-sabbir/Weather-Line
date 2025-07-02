@@ -1,14 +1,16 @@
 import React from 'react'
 import Header from './components/Header/Header'
 import WeatherBoard from './components/Weather/WeatherBoard'
-import { WeatherProviderComponent } from './provider'
+import { WeatherProviderComponent, FavouriteProviderComponent } from './provider'
 
 const App = () => {
   return (
     <>
    <WeatherProviderComponent>
-     <Header/>
-     <WeatherBoard/>
+     <FavouriteProviderComponent>
+      <Header/>
+      <WeatherBoard/>
+     </FavouriteProviderComponent>
    </WeatherProviderComponent>
     </>
   )

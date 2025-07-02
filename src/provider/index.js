@@ -1,2 +1,3 @@
 import WeatherProviderComponent from "./WeatherProvider";
-export {WeatherProviderComponent};
+import FavouriteProviderComponent from "./FavouriteProvider";
+export {WeatherProviderComponent, FavouriteProviderComponent};

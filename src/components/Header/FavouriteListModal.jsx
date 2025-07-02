@@ -1,12 +1,12 @@
 import React from 'react'
 import listRedHeart from "../../assets/listheart.svg"
 
-const FavoriteListModal = () => {
+const FavouriteListModal = () => {
   return (
     <>
      <div className="relative">
             <div className="flex items-center gap-1">
-             <h3 className="cursor-pointer">Favorite Locations</h3>
+             <h3 className="cursor-pointer">Favourite Locations</h3>
              <span><img className="w-8 h-8" src={listRedHeart} alt="listRedHeart" /></span>
             </div>
             
@@ -20,4 +20,4 @@ const FavoriteListModal = () => {
   )
 }
 
-export default FavoriteListModal
+export default FavouriteListModal
