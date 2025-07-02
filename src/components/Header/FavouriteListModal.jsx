@@ -4,7 +4,7 @@ import listRedHeart from "../../assets/listheart.svg";
 const FavouriteListModal = () => {
   return (
     <>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="flex items-center gap-1">
           <h3 className="cursor-pointer">Favourite Locations</h3>
           <span>
@@ -17,7 +17,7 @@ const FavouriteListModal = () => {
           <li className="">Rangpur</li>
           <li className="">Europe</li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 };

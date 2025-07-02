@@ -4,22 +4,25 @@ import { FavouriteContext } from "../context";
 const FavouriteProviderComponent = ({ children }) => {
   const [favourites, setFavourites] = useLocalStorage("favourites", []);
 
-  const addToFavourite = (latitude, longitude, location) => {
-    setFavourites(...favourites, {
-      latitude: "latitude",
-      longitude: "longitude",
-      location: "location",
-    });
-  };
+   const addToFavourites = (latitude, longitude, location) => {
+        setFavourites([
+            ...favourites,
+            {
+                latitude: latitude,
+                longitude: longitude,
+                location: location,
+            },
+        ]);
+    };
 
-  const removeFromfavourite = (location) => {
-    const restfavourites = favourites.filter(
-      (fav) => fav.location !== location
-    );
-    setFavourites(restfavourites);
-  };
+ const removeFromFavourites = (location) => {
+        const restFavourites = favourites.filter(
+            (fav) => fav.location !== location
+        );
+        setFavourites(restFavourites);
+    };
   return (
-    <FavouriteContext.Provider value={{ favourites, addToFavourite, removeFromfavourite }}>
+    <FavouriteContext.Provider value={{ favourites, addToFavourites, removeFromFavourites }}>
       {children}
     </FavouriteContext.Provider>
   );
