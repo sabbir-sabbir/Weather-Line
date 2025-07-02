@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 import Logo from "./Logo";
-import FavoriteListModal from "./FavoriteListModal";
+import FavouriteListModal from "./FavouriteListModal";
 
 
 const Header = () => {
@@ -13,7 +13,7 @@ const Header = () => {
         {/* Search Components */}
         <Search/>
        {/* Favorite List Modal */}
-       <FavoriteListModal/>
+       <FavouriteListModal/>
       </div>
     </section>
   );
