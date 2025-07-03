@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { LocationContext } from "../context";
 
 const useWeather = () => {
+const {selectedLocation} = useContext(LocationContext);
+
 
   // weather data storing state
   const [weatherData, setWeatherData] = useState({
@@ -57,8 +60,8 @@ const useWeather = () => {
         cloudpercentage: data?.clouds?.all,
         wind: data?.wind?.speed,
         time: data?.dt,
-        longitude: longitude,
-        latitude: longitude,
+        latitude: latitude,
+       longitude: longitude,
       };
 
       setWeatherData(updatedWeatherData);
@@ -73,16 +76,30 @@ const useWeather = () => {
     }
   };
   
-  useEffect(()=> {
-    setLoading({
-      state: true,
-      message: "Finding Location"
-    })
-    navigator.geolocation.getCurrentPosition(function(position) {
-       fetchWeatherData(position.coords.latitude, position.coords.longitude)
-    })
-    
-  },[])
+  useEffect(() => {
+  setLoading({
+    state: true,
+    message: "Finding Location"
+  });
+
+  if (selectedLocation?.latitude && selectedLocation?.longitude) {
+    fetchWeatherData(selectedLocation.latitude, selectedLocation.longitude);
+  } else {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        fetchWeatherData(position.coords.latitude, position.coords.longitude);
+      },
+      (error) => {
+        console.error("Geolocation error:", error);
+        setError(error);
+        setLoading({
+          state: false,
+          message: "Failed to get location",
+        });
+      }
+    );
+  }
+}, [selectedLocation?.latitude, selectedLocation?.longitude]);
 
   return {
     weatherData,
