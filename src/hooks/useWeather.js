@@ -3,6 +3,8 @@ import { LocationContext } from "../context";
 
 const useWeather = () => {
 const {selectedLocation} = useContext(LocationContext);
+console.log(selectedLocation);
+
 
 
   // weather data storing state
@@ -99,7 +101,7 @@ const {selectedLocation} = useContext(LocationContext);
       }
     );
   }
-}, [selectedLocation?.latitude, selectedLocation?.longitude]);
+}, [selectedLocation.latitude, selectedLocation.longitude]);
 
   return {
     weatherData,
